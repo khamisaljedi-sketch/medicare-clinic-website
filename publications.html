@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ahmed Mokhallalati — peer-reviewed publications in reconstructive surgery, conflict medicine, global health, and humanitarian surgery."/>
+  <title>Publications | Ahmed Mokhallalati</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_32.png"/>
+  <link rel="apple-touch-icon" href="images/favicon_180.png"/>
+  <meta property="og:title" content="Publications | Ahmed Mokhallalati"/>
+  <meta property="og:description" content="Peer-reviewed research in reconstructive surgery, conflict medicine, and global health."/>
+  <meta property="og:url" content="https://ahmedmokhallalati.com/publications.html"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="canonical" href="https://ahmedmokhallalati.com/publications.html"/>
+  <style>
+    .pub-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:48px; }
+    .pub-stat { background:var(--card-bg); border:1px solid var(--border); border-radius:10px; padding:24px 20px; text-align:center; }
+    .pub-stat__num { font-family:var(--font-serif); font-size:2.6rem; font-weight:300; color:var(--teal-dk); line-height:1; margin-bottom:6px; }
+    .pub-stat__label { font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--text2); font-weight:500; }
+    .pub-filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:32px; }
+    .pub-filter { background:transparent; border:1px solid var(--border); border-radius:20px; padding:7px 16px; font-size:12px; font-weight:500; color:var(--text2); cursor:pointer; transition:all 0.2s; letter-spacing:.04em; }
+    .pub-filter:hover { border-color:var(--teal-dk); color:var(--teal-dk); }
+    .pub-filter.active { background:var(--teal-dk); border-color:var(--teal-dk); color:#fff; }
+    .pub-card { background:var(--card-bg); border:1px solid var(--border); border-radius:10px; padding:28px 32px; margin-bottom:16px; transition:border-color 0.2s, box-shadow 0.2s; }
+    .pub-card:hover { border-color:rgba(126,211,218,0.5); box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+    .pub-card--lancet { border-left:3px solid #c0392b; }
+    .pub-card--bmj    { border-left:3px solid #1a5276; }
+    .pub-card__meta { display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
+    .pub-journal { font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:3px 10px; border-radius:3px; color:#fff; white-space:nowrap; }
+    .pub-journal--lancet  { background:#c0392b; }
+    .pub-journal--bmj     { background:#1a5276; }
+    .pub-journal--burns   { background:#d35400; }
+    .pub-journal--milmed  { background:#2e4057; }
+    .pub-journal--prsgo   { background:#1e6f5c; }
+    .pub-journal--cosm    { background:#7d3c98; }
+    .pub-journal--default { background:var(--teal-dk); }
+    .pub-year { font-size:12px; color:var(--text2); }
+    .pub-citations { font-size:11px; color:var(--teal-dk); font-weight:500; margin-left:auto; }
+    .pub-card__title { font-family:var(--font-serif); font-size:17px; font-weight:400; color:var(--navy); line-height:1.5; margin-bottom:8px; }
+    .pub-card__authors { font-size:12.5px; color:var(--text2); margin-bottom:10px; font-weight:300; font-style:italic; line-height:1.6; }
+    .pub-card__authors strong { color:var(--teal-dk); font-style:normal; font-weight:600; }
+    .pub-card__citation { font-size:11.5px; color:var(--text2); line-height:1.7; font-weight:300; padding:10px 14px; background:rgba(0,0,0,0.02); border-radius:4px; margin-bottom:10px; }
+    .pub-abstract { font-size:13px; line-height:1.8; color:var(--text2); font-weight:300; max-height:0; overflow:hidden; transition:max-height 0.4s ease, opacity 0.4s ease; opacity:0; }
+    .pub-abstract.open { max-height:400px; opacity:1; margin-top:14px; }
+    .pub-tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:12px; }
+    .pub-tag { font-size:10px; padding:3px 9px; border-radius:12px; background:rgba(126,211,218,0.1); color:var(--teal-dk); font-weight:500; letter-spacing:.04em; }
+    .pub-card__foot { display:flex; align-items:center; gap:12px; margin-top:14px; padding-top:12px; border-top:1px solid var(--border); flex-wrap:wrap; }
+    .pub-link { display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:500; color:var(--teal-dk); text-decoration:none; transition:color 0.2s; }
+    .pub-link:hover { color:var(--navy); }
+    .pub-toggle { background:none; border:none; font-size:12px; color:var(--text2); cursor:pointer; padding:0; margin-left:auto; transition:color 0.2s; }
+    .pub-toggle:hover { color:var(--navy); }
+    @media (max-width:900px) { .pub-stats { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:640px) { .pub-stats { grid-template-columns:repeat(2,1fr); gap:10px; } .pub-stat__num { font-size:2rem; } .pub-card { padding:20px 18px; } }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="page-header">
+    <div class="page-header__inner">
+      <p class="page-header__eyebrow fade-in" data-i18n="pub_page_eyebrow">Research &amp; Scholarship</p>
+      <h1 class="page-header__title fade-in" data-i18n="pub_page_title">Publications</h1>
+    </div>
+  </div>
+
+  <section class="section">
+
+    <!-- Stats -->
+    <div class="pub-stats fade-in">
+      <div class="pub-stat"><div class="pub-stat__num">10</div><div class="pub-stat__label" data-i18n="pub_stat_pubs">Publications</div></div>
+      <div class="pub-stat"><div class="pub-stat__num">28+</div><div class="pub-stat__label" data-i18n="pub_stat_cit">Citations</div></div>
+      <div class="pub-stat"><div class="pub-stat__num">6</div><div class="pub-stat__label" data-i18n="pub_stat_jour">Journals</div></div>
+      <div class="pub-stat"><div class="pub-stat__num">2018–26</div><div class="pub-stat__label" data-i18n="pub_stat_since">Active Since</div></div>
+    </div>
+
+    <!-- Filters -->
+    <div class="pub-filters fade-in">
+      <button class="pub-filter active" data-filter="all" data-i18n="pub_filter_all">All</button>
+      <button class="pub-filter" data-filter="Gaza" data-i18n="pub_filter_gaza">Gaza</button>
+      <button class="pub-filter" data-filter="Conflict Surgery" data-i18n="pub_filter_conf">Conflict Surgery</button>
+      <button class="pub-filter" data-filter="Reconstructive Surgery" data-i18n="pub_filter_recon">Reconstructive Surgery</button>
+      <button class="pub-filter" data-filter="Humanitarian" data-i18n="pub_filter_hum">Humanitarian</button>
+      <button class="pub-filter" data-filter="Aesthetics" data-i18n="pub_filter_aes">Aesthetics</button>
+      <button class="pub-filter" data-filter="Palliative Care" data-i18n="pub_filter_pal">Palliative Care</button>
+      <button class="pub-filter" data-filter="Hand Surgery" data-i18n="pub_filter_hand">Hand Surgery</button>
+    </div>
+
+    <!-- 1. The Lancet -->
+    <div class="pub-card pub-card--lancet fade-in" data-tags="Gaza,Reconstructive Surgery,Conflict Surgery">
+      <div class="pub-card__meta">
+        <span class="pub-journal pub-journal--lancet">eClinicalMedicine · The Lancet</span>
+        <span class="pub-year">2026</span>
+        <span class="pub-citations">↗ 6 citations</span>
+      </div>
+      <h2 class="pub-card__title">A predictive, multi-source, attack-level model to quantify and characterize the injury burden and need for reconstructive surgery in Gaza</h2>
+      <p class="pub-card__authors">Haravu P, Lin E, Berrada O, Chugh I, Patel A, Sahloul Z, <strong>Mokhallalati AM</strong> et al.</p>
+      <p class="pub-card__citation">eClinicalMedicine. 2026;103797. doi:10.1016/j.eclinm.2026.103797</p>
+      <div class="pub-abstract" id="abs4">First predictive model to forecast injury burden in Gaza using granular multi-source data. Predicted 116,020 injuries (Oct 2023–May 2025), aligning with 118,014 reported by Gaza Ministry of Health. Of those, 29,000–46,000 require reconstructive surgery — over 80% due to explosions. Funded by Bass Connections grant, Duke University.</div>
+      <div class="pub-tags"><span class="pub-tag">Gaza</span><span class="pub-tag">Reconstructive Surgery</span><span class="pub-tag">Predictive Model</span><span class="pub-tag">Conflict Surgery</span></div>
+      <div class="pub-card__foot">
+        <a class="pub-link" href="https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(26)00044-1/fulltext" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Read Full Paper
+        </a>
+        <button class="pub-toggle" onclick="toggleAbstract('abs4',this)">Show abstract ▾</button>
+      </div>
+    </div>
+
+    <!-- 2. BMJ -->
+    <div class="pub-card pub-card--bmj fade-in" data-tags="Gaza,Trauma,Conflict Surgery,Global Health">
+      <div class="pub-card__meta">
+        <span class="pub-journal pub-journal--bmj">BMJ</span>
+        <span class="pub-year">2025</span>
+        <span class="pub-citations">↗ 13 citations</span>
+      </div>
+      <h2 class="pub-card__title">Patterns of war related trauma in Gaza during armed conflict: survey study of international healthcare workers</h2>
+      <p class="pub-card__authors">El-Taji O, Ali A, Alser O, Ghali A, Jomaa A, Sultan MJ, Irfan B, Jafar A, Qandil M, Jeelani A, Darwish A, <strong>Mokhallalati AM</strong>, McMonagle M, Rose V, Mamode N, Khan S, Maynard N, Nott D, Chai AS; International Medical Responders for Gaza collaborators.</p>
+      <p class="pub-card__citation">BMJ. 2025.</p>
+      <div class="pub-abstract" id="abs1">Survey study of 78 international healthcare workers deployed to Gaza (August 2024–February 2025). Documented 23,726 trauma-related injuries and 6,960 weapon-related injuries. Most common: burns (18.3%), lower limb injuries (17.9%), upper limb injuries (14.9%). Explosive injuries: 66.6% of weapon-related trauma. Provides actionable insights to tailor humanitarian response.</div>
+      <div class="pub-tags"><span class="pub-tag">Gaza</span><span class="pub-tag">Trauma</span><span class="pub-tag">Conflict Surgery</span><span class="pub-tag">Global Health</span></div>
+      <div class="pub-card__foot">
+        <a class="pub-link" href="https://www.bmj.com" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Read Full Paper
+        </a>
+        <button class="pub-toggle" onclick="toggleAbstract('abs1',this)">Show abstract ▾</button>
+      </div>
+    </div>
+
+    <!-- 3. PRS Global Open -->
+    <div class="pub-card fade-in" data-tags="Gaza,Reconstructive Surgery,Humanitarian">
+      <div class="pub-card__meta">
+        <span class="pub-journal pub-journal--prsgo">PRS Global Open</span>
+        <span class="pub-year">2026</span>
+      </div>
+      <h2 class="pub-card__title">Development of a Multinational Collaboration Supporting Reconstructive Surgery in Response to the 2023–2025 War in Gaza</h2>
+      <p class="pub-card__authors">Haravu PN, Lin E, Chelbi L, Hasso F, Staton C, Rose V, <strong>Mokhallalati A</strong> et al.</p>
+      <p class="pub-card__citation">Plastic and Reconstructive Surgery–Global Open. 2026;14(2):e7514.</p>
+      <div class="pub-abstract" id="abs6">Community-based participatory research framework establishing a multinational team for reconstructive surgical planning in Gaza. Within 1 year, built an ethically approved collaboration with institutional funding. Offers a replicable ethical framework for plastic surgeons to engage proactively in humanitarian crises beyond direct care.</div>
+      <div class="pub-tags"><span class="pub-tag">Gaza</span><span class="pub-tag">Reconstructive Surgery</span><span class="pub-tag">Multinational Collaboration</span><span class="pub-tag">Humanitarian</span></div>
+      <div class="pub-card__foot">
+        <a class="pub-link" href="https://journals.lww.com/prsgo/fulltext/2026/02000/development_of_a_multinational_collaboration.46.aspx" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Read Full Paper
+        </a>
+        <button class="pub-toggle" onclick="toggleAbstract('abs6',this)">Show abstract ▾</button>
+      </div>
+    </div>
+
+    <!-- 4. Military Medicine -->
+    <div class="pub-card fade-in" data-tags="Conflict Surgery">
+      <div class="pub-card__meta">
+        <span class="pub-journal pub-journal--milmed">Military Medicine</span>
+        <span class="pub-year">2025</span>
+        <span class="pub-citations">↗ 5 citations</span>
+      </div>
+      <h2 class="pub-card__title">The Medical Impacts of Thermobaric Weapons: A Scoping Review</h2>
+      <p class="pub-card__authors">Cheran A, Gnaedinger A, Tolany A, Obi E, Tertyshnyii S, Ratnayake A, <strong>Mokhallalati AM</strong>, Eyayaw Mitiku H, Jewell T, Leboa C, Amoroso P, Van Coller A, Wild HB.</p>
+      <p class="pub-card__citation">Military Medicine. Published online 15 Sep 2025. doi:10.1093/milmed/usaf400</p>
+      <div class="pub-abstract" id="abs3">Scoping review (PRISMA-ScR). Searched 7,365 records; 16 eligible reports included. All highlighted complex multidimensional injury patterns: pulmonary barotrauma, full-thickness burns, chemical inhalation injuries, and tertiary injuries from confined-space detonations. Recommends establishment of a global registry.</div>
+      <div class="pub-tags"><span class="pub-tag">Thermobaric Weapons</span><span class="pub-tag">Blast Injury</span><span class="pub-tag">Scoping Review</span><span class="pub-tag">Conflict Surgery</span></div>
+      <div class="pub-card__foot">
+        <a class="pub-link" href="https://academic.oup.com/milmed/article-abstract/191/3-4/e548/8255573" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Read Full Paper
+        </a>
+        <button class="pub-toggle" onclick="toggleAbstract('abs3',this)">Show abstract ▾</button>
+      </div>
+    </div>
+
+    <!-- 5. Burns Journal -->
+    <div class="pub-card fade-in" data-tags="Conflict Surgery,Humanitarian">
+      <div class="pub-card__meta">
+        <span class="pub-journal pub-journal--burns">Burns Journal</span>
+        <span class="pub-year">2025</span>
+        <span class="pub-citations">↗ 3 citations</span>
+      </div>
+      <h2 class="pub-card__title">Documenting the human cost of incendiary weapons: Establishment of a global registry</h2>
+      <p class="pub-card__authors">Willging A, Docherty B, <strong>Mokhallalati AM</strong>, Tertyshnyi S, Katurji Hamza Alkeab Z, Babayan K, Chekijian S, Cheran A, Prestsæter T, Kallstrom A, Stewart BT, Wild HB.</p>
+      <p class="pub-card__citation">Burns. 2025 Mar;51(2):107369. Epub 2025 Jan 2. doi:10.1016/j.burns.2024.107369</p>
+      <div class="pub-abstract" id="abs2">Establishment of a global registry to systematically document the human cost of incendiary weapons, including burns and blast injuries in conflict zones.</div>
+      <div class="pub-tags"><span class="pub-tag">Burns</span><span class="pub-tag">Incendiary Weapons</span><span class="pub-tag">Global Registry</span><span class="pub-tag">Conflict Surgery</span></div>
+      <div class="pub-card__foot">
+        <a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/39847836/" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          PubMed
+        </a>
+        <button class="pub-toggle" onclick="toggleAbstract('abs2',this)">Show abstract ▾</button>
+      </div>
+    </div>
+
+    <!-- 6. Disaster Medicine -->
+    <div class="pub-card fade-in" data-tags="Humanitarian,Conflict Surgery">
+      <div class="pub-card__meta">
+        <span class="pub-journal pub-journal--default">Disaster Medicine</span>
+        <span class="pub-year">2026</span>
+        <span class="pub-citations">↗ 1 citation</span>
+      </div>
+      <h2 class="pub-card__title">Civilian Shelter Guidance in Armed Conflict Zones: A Qualitative Study of International Humanitarian Practitioners</h2>
+      <p class="pub-card__authors">Brackstone K, Denny J, Hansen AC, Trautwein M, Badri E, Cheran A, Toal R, Tertyshnyi S, Asgedom A, <strong>Mokhallalati A</strong>, Wild H et al.</p>
+      <p class="pub-card__citation">Disaster Medicine and Public Health Preparedness. 2026;20:e89.</p>
+      <div class="pub-abstract" id="abs5">Semi-structured interviews with 10 humanitarian practitioners. Found current shelter guidance is fragmented and lacks an evidence base. Approved by University of Washington IRB (STUDY00019413).</div>
+      <div class="pub-tags"><span class="pub-tag">EWIPA</span><span class="pub-tag">Civilian Protection</span><span class="pub-tag">Humanitarian</span><span class="pub-tag">Qualitative Study</span></div>
+      <div class="pub-card__foot">
+        <a class="pub-link" href="https://www.medrxiv.org/content/10.1101/2025.11.06.25339465v1" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Paper
+        </a>
+        <button class="pub-toggle" onclick="toggleAbstract('abs5',this)">Show abstract ▾</button>
+      </div>
+    </div>
+
+    <!-- 7. Non-surgical neck contouring 2018 -->
+    <div class="pub-card fade-in" data-tags="Aesthetics">
+      <div class="pub-card__meta">
+        <span class="pub-journal pub-journal--cosm">Cosmetology Journal</span>
+        <span class="pub-year">2018</span>
+      </div>
+      <h2 class="pub-card__title">Non-surgical neck contouring</h2>
+      <p class="pub-card__authors"><strong>Mokhallalati AM</strong>, Sada R, Badran S, Zahid R, Mohammedali S, Mostafa S et al.</p>
+      <p class="pub-card__citation">Cosmetol J. 2018;2(2):000111.</p>
+      <div class="pub-abstract" id="abs8">Clinical paper on non-surgical approaches to neck contouring in aesthetic plastic surgery practice.</div>
+      <div class="pub-tags"><span class="pub-tag">Aesthetics</span><span class="pub-tag">Neck Contouring</span><span class="pub-tag">Plastic Surgery</span></div>
+      <div class="pub-card__foot">
+        <button class="pub-toggle" onclick="toggleAbstract('abs8',this)">Show abstract ▾</button>
+      </div>
+    </div>
+
+    <!-- 8. H. Pylori 2016 -->
+    <div class="pub-card fade-in" data-tags="Clinical Research">
+      <div class="pub-card__meta">
+        <span class="pub-journal pub-journal--default">PMC / PubMed Central</span>
+        <span class="pub-year">2016</span>
+      </div>
+      <h2 class="pub-card__title">Evaluation of Clinicopathological and Risk Factors for Nonmalignant H. Pylori Associated Gastroduodenal Disorders in Iraqi Patients</h2>
+      <p class="pub-card__authors"><strong>Mokhallalati AM</strong> et al.</p>
+      <p class="pub-card__citation">PMC4877902. Published 2016.</p>
+      <div class="pub-abstract" id="abs7">Study examining risk factors for H. pylori infection in Iraqi patients. Gastroduodenal biopsies examined by rapid urease test and Gram staining. CagA cytotoxin detected by in situ hybridization. Key findings: smoking, NSAID use, animal contact, and low education level increase H. pylori risk. Weight loss and heartburn identified as cardinal signs.</div>
+      <div class="pub-tags"><span class="pub-tag">H. Pylori</span><span class="pub-tag">Gastroduodenal</span><span class="pub-tag">Clinical Research</span></div>
+      <div class="pub-card__foot">
+        <a class="pub-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4877902/" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          PubMed Central
+        </a>
+        <a class="pub-link" href="https://pdfs.semanticscholar.org/b9ff/1e79403f61fc1fac3713a30e6a4be211afc4.pdf" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          PDF
+        </a>
+        <button class="pub-toggle" onclick="toggleAbstract('abs7',this)">Show abstract ▾</button>
+      </div>
+    </div>
+
+
+    <!-- 9. PhD Thesis — University of Leeds -->
+    <div class="pub-card fade-in" data-tags="Palliative Care,Clinical Research">
+      <div class="pub-card__meta">
+        <span class="pub-journal" style="background:#5d4e8a">PhD Thesis · University of Leeds</span>
+        <span class="pub-year">2023</span>
+      </div>
+      <h2 class="pub-card__title">Improving identification of patients who are likely to have palliative care needs in primary care in the UK</h2>
+      <p class="pub-card__authors"><strong>El Mokhallalati Y</strong> (Yahya El Mokhallalati)</p>
+      <p class="pub-card__citation">PhD Thesis. University of Leeds, White Rose eTheses Online. 2023.</p>
+      <div class="pub-abstract" id="abs9">Doctoral thesis examining how to improve the identification of patients likely to require palliative care, within the UK primary care setting. Addresses the challenge of recognising patients with palliative care needs early enough to ensure timely, appropriate support and planning.</div>
+      <div class="pub-tags"><span class="pub-tag">Palliative Care</span><span class="pub-tag">Primary Care</span><span class="pub-tag">UK Health</span><span class="pub-tag">PhD Thesis</span></div>
+      <div class="pub-card__foot">
+        <a class="pub-link" href="https://etheses.whiterose.ac.uk/id/eprint/36899/1/Y%20EL%20MOKHALLALATI%20FINAL.pdf" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Download PDF
+        </a>
+        <a class="pub-link" href="https://etheses.whiterose.ac.uk/id/eprint/36899/" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          White Rose Repository
+        </a>
+        <button class="pub-toggle" onclick="toggleAbstract('abs9',this)">Show abstract ▾</button>
+      </div>
+    </div>
+
+
+    <!-- 10. External Fixator — Hand Surgery -->
+    <div class="pub-card fade-in" data-tags="Hand Surgery,Plastic Surgery">
+      <div class="pub-card__meta">
+        <span class="pub-journal" style="background:#1a6b4a">Hand Surgery</span>
+        <span class="pub-year">2025</span>
+      </div>
+      <h2 class="pub-card__title">External Fixator Distraction Idea to Reduce Complex Digital Fractures and Preserve Digital Joints</h2>
+      <p class="pub-card__authors">Quazi S, <strong>Mokhallalati AM</strong> et al.</p>
+      <p class="pub-card__citation">ResearchGate. 2025. doi:10.13140/RG.2.2.388835113</p>
+      <div class="pub-abstract" id="abs10">Novel technique using external fixator distraction to reduce complex digital fractures while preserving digital joint integrity — an important consideration in reconstructive and hand surgery practice.</div>
+      <div class="pub-tags"><span class="pub-tag">Hand Surgery</span><span class="pub-tag">Digital Fractures</span><span class="pub-tag">External Fixator</span><span class="pub-tag">Plastic Surgery</span></div>
+      <div class="pub-card__foot">
+        <a class="pub-link" href="https://www.researchgate.net/profile/Sohail-Quazi-2/publication/388835113_External_Fixator_Distraction_Idea_to_Reduce_Complex_Digital_Fractures_and_Preserve_Digital_Joints/links/67a91124207c0c20fa81a635/External-Fixator-Distraction-Idea-to-Reduce-Complex-Digital-Fractures-and-Preserve-Digital-Joints.pdf" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Download PDF
+        </a>
+        <button class="pub-toggle" onclick="toggleAbstract('abs10',this)">Show abstract ▾</button>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<script>
+function toggleAbstract(id, btn) {
+  const el = document.getElementById(id);
+  const open = el.classList.toggle('open');
+  btn.textContent = open ? 'Hide abstract ▴' : 'Show abstract ▾';
+}
+document.querySelectorAll('.pub-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pub-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.pub-card').forEach(card => {
+      card.style.display = (filter === 'all' || (card.dataset.tags||'').includes(filter)) ? '' : 'none';
+    });
+  });
+});
+</script>
+
+<script src="js/i18n.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

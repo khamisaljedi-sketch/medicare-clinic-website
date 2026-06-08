@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ahmed Mokhallalati — Global Health work, humanitarian surgery, Global MedReach Initiative, and conference presentations."/>
+  <title>Global Health | Ahmed Mokhallalati</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_32.png"/>
+  <link rel="apple-touch-icon" href="images/favicon_180.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="images/hero.jpg"/>
+  <meta property="og:description" content="Global MedReach Initiative, humanitarian surgery, conflict settings, and international conference presentations."/>
+  <meta property="og:url" content="https://ahmedmokhallalati.com/global-health.html"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="alternate" hreflang="en" href="https://ahmedmokhallalati.com/global-health.html"/>
+  <link rel="alternate" hreflang="ar" href="https://ahmedmokhallalati.com/global-health.html"/>
+  <link rel="canonical" href="https://ahmedmokhallalati.com/global-health.html"/>
+
+  <style>
+    /* ══════════════════════════════════════
+       EVENT CARD — image left, text right
+    ══════════════════════════════════════ */
+    .ev-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      min-height: 360px;
+    }
+
+    /* Auto-slideshow — stacked images, no arrows */
+    .ev-photos {
+      position: relative;
+      overflow: hidden;
+      background: #0d1f2d;
+    }
+    .ev-photos__slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    .ev-photos__slide.active { opacity: 1; }
+    .ev-photos__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Dot indicators — bottom center of photo panel */
+    .ev-photos__dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 5;
+    }
+    .ev-photos__dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .ev-photos__dot.active {
+      background: #fff;
+      transform: scale(1.5);
+    }
+
+    /* Single image (no slideshow) */
+    .ev-photo-single {
+      overflow: hidden;
+      background: #0d1f2d;
+    }
+    .ev-photo-single img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Text panel */
+    .ev-body {
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .ev-meta  { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+    .ev-badge { color: #fff; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; padding: 4px 12px; border-radius: 2px; font-weight: 500; }
+    .ev-badge--teal { background: var(--teal-dk); }
+    .ev-badge--pink { background: var(--pink-dk); }
+    .ev-year  { font-family: var(--font-serif); font-size: 17px; color: rgba(126,211,218,.35); font-weight: 300; }
+    .ev-title { font-family: var(--font-serif); font-size: 21px; font-weight: 400; color: var(--navy); margin-bottom: 7px; line-height: 1.4; }
+    .ev-sub   { font-size: 11px; color: var(--teal-dk); letter-spacing: .08em; text-transform: uppercase; font-weight: 500; margin-bottom: 16px; line-height: 1.6; }
+    .ev-quote { font-size: 15px; font-family: var(--font-serif); font-style: italic; color: var(--navy); margin-bottom: 12px; font-weight: 300; }
+    .ev-text  { font-size: 13.5px; line-height: 1.85; color: var(--text2); font-weight: 300; margin-bottom: 12px; }
+    .ev-text:last-child { margin-bottom: 0; }
+    .ev-note  { margin-top: 16px; padding: 14px 16px; background: rgba(126,211,218,0.06); border-left: 3px solid var(--teal); border-radius: 0 4px 4px 0; }
+    .ev-note p { font-size: 12px; color: var(--text2); line-height: 1.7; font-weight: 300; }
+    .ev-blockquote { margin-top: 16px; padding: 14px 16px; background: rgba(126,211,218,0.06); border-left: 3px solid var(--teal); border-radius: 0 4px 4px 0; }
+    .ev-blockquote p { font-size: 13px; font-style: italic; color: var(--navy); line-height: 1.75; font-weight: 300; font-family: var(--font-serif); }
+
+    /* Responsive — stack on tablet/mobile */
+    @media (max-width: 900px) {
+      .ev-card { grid-template-columns: 1fr; }
+      .ev-photos, .ev-photo-single { height: 280px; }
+      .ev-body { padding: 24px 22px; }
+      .ev-title { font-size: 18px; }
+    }
+    @media (max-width: 640px) {
+      .ev-photos, .ev-photo-single { height: 230px; }
+      .ev-body { padding: 20px 18px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-header">
+    <div class="page-header__inner">
+      <p class="page-header__eyebrow fade-in" data-i18n="gh_ph_eyebrow">Beyond the operating theatre</p>
+      <h1 class="page-header__title fade-in" data-i18n="gh_ph_title">Global Health &amp; Research</h1>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="split">
+      <div>
+        <p class="eyebrow fade-in" data-i18n="gh_eyebrow">Global MedReach Initiative</p>
+        <h2 class="section-title fade-in" data-i18n="gh_title">Founder &amp; Director</h2>
+        <div class="rule fade-in"></div>
+        <p class="body-text fade-in" data-i18n="gh_p1">I've worked in places where patients wait months for an operation that in the UK would happen within weeks. Where the equipment runs out. Where the surgeon covering the whole hospital is also teaching medical students and running the ward.</p>
+        <p class="body-text fade-in" style="margin-top:14px" data-i18n="gh_p2">Those experiences changed how I think about medicine — and what "doing something useful" actually means.</p>
+        <p class="body-text fade-in" style="margin-top:14px" data-i18n="gh_p3">The most valuable thing an outside surgeon can do isn't to arrive, operate for two weeks, and leave. It's to work alongside local teams, contribute to training, and help build something that functions when you're not there.</p>
+        <p class="body-text fade-in" style="margin-top:14px" data-i18n="gh_p4">Through the Global MedReach Initiative, I work with international colleagues to build sustainable systems of care in conflict and resource-limited settings.</p>
+      </div>
+      <div class="photo-frame fade-in">
+        <img src="images/theatre.jpg" alt="Ahmed Mokhallalati in theatre" loading="lazy"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 cards -->
+  <section class="section" style="padding-top:0">
+    <div class="cards-grid">
+      <div class="card fade-in"><div class="card__icon">🎓</div><h3 class="card__title" data-i18n="gh_c1_title">Surgical Training</h3><p class="card__text" data-i18n="gh_c1_text">Working with surgeons in under-resourced settings to build skills that stay long after I leave. The goal isn't dependency — it's the opposite.</p></div>
+      <div class="card fade-in"><div class="card__icon">🏗️</div><h3 class="card__title" data-i18n="gh_c2_title">Service Development</h3><p class="card__text" data-i18n="gh_c2_text">Clinical systems, governance, standards of care — the unglamorous stuff that determines whether a surgical service actually works consistently.</p></div>
+      <div class="card fade-in"><div class="card__icon">🤝</div><h3 class="card__title" data-i18n="gh_c3_title">Research &amp; Collaboration</h3><p class="card__text" data-i18n="gh_c3_text">Collaborative research focused on reconstructive surgery, trauma systems, and global surgical care.</p></div>
+    </div>
+  </section>
+
+  <!-- ══ FROM THE FIELD ══ -->
+  <section class="section" style="padding-top:0">
+    <p class="eyebrow fade-in">Recent Events</p>
+    <h2 class="section-title fade-in" style="margin-bottom:32px">From the Field</h2>
+
+    <!-- PalMed 2026 -->
+    <div class="ev-card fade-in">
+      <div class="ev-photos" data-autoplay="5000">
+        <div class="ev-photos__slide active">
+          <img src="images/conf_palmed_2.jpg" alt="Ahmed Mokhallalati with Victoria Rose — PalMed Academy 2026, King's College London" loading="lazy" style="object-position:center 22%"/>
+        </div>
+        <div class="ev-photos__slide">
+          <img src="images/conf_palmed_1.jpg" alt="Ahmed Mokhallalati presenting at PalMed Academy 2026" loading="lazy" style="object-position:center 32%"/>
+        </div>
+        <div class="ev-photos__dots">
+          <button class="ev-photos__dot active" aria-label="Photo 1"></button>
+          <button class="ev-photos__dot" aria-label="Photo 2"></button>
+        </div>
+      </div>
+      <div class="ev-body">
+        <div class="ev-meta">
+          <span class="ev-badge ev-badge--teal">Invited &amp; Chair</span>
+          <span class="ev-year">2026</span>
+        </div>
+        <h3 class="ev-title" data-i18n="ev_palmed_title">PalMed Academy — Annual Meeting &amp; Scientific Conference 2026</h3>
+        <p class="ev-sub" data-i18n="ev_palmed_sub">King's College London · 24–25 April 2026</p>
+        <p class="ev-text">data-i18n="ev_palmed_text">Chaired the Reconstructive Surgery &amp; Psychological Impact of War session. A gathering of clinicians, academics and healthcare workers committed to supporting Gaza's health system through an extraordinarily difficult period — and a reminder of how many people are still showing up for that work.</p>
+      </div>
+    </div>
+
+    <!-- Qatar Plastica 2026 -->
+    <div class="ev-card fade-in">
+      <div class="ev-photos" data-autoplay="5000">
+        <div class="ev-photos__slide active">
+          <img src="images/conf_qatar_3.jpg" alt="Ahmed Mokhallalati with colleagues at Qatar Plastica Conference 2026, Doha" loading="lazy" style="object-position:center 38%"/>
+        </div>
+        <div class="ev-photos__slide">
+          <img src="images/conf_qatar_2.jpg" alt="Ahmed Mokhallalati introduced on screen at Qatar Plastica 2026" loading="lazy" style="object-position:center 42%"/>
+        </div>
+        <div class="ev-photos__slide">
+          <img src="images/conf_qatar_1.jpg" alt="Qatar Plastica 2026 — conference delegates" loading="lazy" style="object-position:center 32%"/>
+        </div>
+        <div class="ev-photos__dots">
+          <button class="ev-photos__dot active" aria-label="Photo 1"></button>
+          <button class="ev-photos__dot" aria-label="Photo 2"></button>
+          <button class="ev-photos__dot" aria-label="Photo 3"></button>
+        </div>
+      </div>
+      <div class="ev-body">
+        <div class="ev-meta">
+          <span class="ev-badge ev-badge--teal">Invited Speaker</span>
+          <span class="ev-year">2026</span>
+        </div>
+        <h3 class="ev-title" data-i18n="ev_qatar_title">Qatar Plastica Conference 2026</h3>
+        <p class="ev-sub" data-i18n="ev_qatar_sub">Doha, Qatar · 14–17 January 2026</p>
+        <p class="ev-quote" data-i18n="ev_qatar_quote">"Aesthetic Considerations in Breast Reconstruction"</p>
+        <p class="ev-text">data-i18n="ev_qatar_text">Qatar is where my journey in plastic surgery first began — where the mentors who shaped my training practised, and where the foundations of how I think about surgery were laid. Coming back as an invited speaker felt meaningful for that reason. The talk focused on the importance of aesthetic planning in breast reconstruction: not as a secondary consideration, but as an integral part of the surgical decision-making from the outset.</p>
+      </div>
+    </div>
+
+    <!-- EBA 2025 -->
+    <div class="ev-card fade-in">
+      <div class="ev-photos" data-autoplay="5000">
+        <div class="ev-photos__slide active">
+          <img src="images/conf_eba_2.jpg" alt="Ahmed Mokhallalati with colleagues on stage at 21st EBA Congress, Berlin" loading="lazy" style="object-position:center 32%"/>
+        </div>
+        <div class="ev-photos__slide">
+          <img src="images/conf_eba_1.jpg" alt="Hope as a strategy — Ahmed Mokhallalati presenting at EBA Congress Berlin 2025" loading="lazy" style="object-position:center 42%"/>
+        </div>
+        <div class="ev-photos__dots">
+          <button class="ev-photos__dot active" aria-label="Photo 1"></button>
+          <button class="ev-photos__dot" aria-label="Photo 2"></button>
+        </div>
+      </div>
+      <div class="ev-body">
+        <div class="ev-meta">
+          <span class="ev-badge ev-badge--pink">Invited &amp; Moderator</span>
+          <span class="ev-year">2025</span>
+        </div>
+        <h3 class="ev-title" data-i18n="ev_eba_title">21st European Burns Association Congress</h3>
+        <p class="ev-sub" data-i18n="ev_eba_sub">Berlin, Germany · Invited Speaker &amp; Session Moderator</p>
+        <p class="ev-quote" data-i18n="ev_eba_quote">"Hope as a strategy... My journey of change in Gaza"</p>
+        <p class="ev-text">data-i18n="ev_eba_text">Presented on experiences in Gaza and the challenges faced during the war — and moderated sessions on burns in austere conditions and war zones alongside colleague Tom Potokar. What stood out most was the solidarity in the room, and how clearly the younger generation of health workers understands the reality of what is happening.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══ CONFERENCES LIST ══ -->
+  <section class="section" style="padding-top:0">
+    <p class="eyebrow fade-in" data-i18n="conf_eyebrow">Academic work</p>
+    <h2 class="section-title fade-in" style="margin-bottom:28px" data-i18n="conf_title">Invited Talks &amp; Conference Presentations</h2>
+    <div class="conf-list fade-in">
+      <div class="conf-item"><span class="conf-type" data-i18n="type_invited">Invited</span><div><div class="conf-title"><em>Reconstructing the Stereotype: Plastics Across the Globe</em></div><div class="conf-venue">Imperial College London</div></div><span class="conf-year">2025</span></div>
+      <div class="conf-item"><span class="conf-type" data-i18n="type_invited">Invited</span><div><div class="conf-title"><em>Global Surgical Frontier Conference</em></div><div class="conf-venue">Royal College of Surgeons of England</div></div><span class="conf-year">2025</span></div>
+      <div class="conf-item"><span class="conf-type conf-type--oral" data-i18n="type_oral">Oral</span><div><div class="conf-title"><em>Managing Bone Infection in Conflict Areas</em></div><div class="conf-venue">European Bone &amp; Joint Infection Conference</div></div><span class="conf-year">2025</span></div>
+      <div class="conf-item"><span class="conf-type conf-type--moderator" data-i18n="type_moderator">Invited &amp; Moderator</span><div><div class="conf-title"><em>Young Perspectives: Plastic Surgery Training and Humanitarian Work</em></div><div class="conf-venue">European Burn Association Congress</div></div><span class="conf-year">2025</span></div>
+      <div class="conf-item"><span class="conf-type" data-i18n="type_invited">Invited</span><div><div class="conf-title"><em>From Comfort to Conflict: Rewiring the Surgical Mindset in the Gaza War</em></div><div class="conf-venue">World Society of Reconstructive Microsurgery Congress</div></div><span class="conf-year">2025</span></div>
+      <div class="conf-item"><span class="conf-type conf-type--moderator" data-i18n="type_moderator">Invited &amp; Moderator</span><div><div class="conf-title"><em>Burns in Conflict Areas</em></div><div class="conf-venue">EuroAsia Burn Conference</div></div><span class="conf-year">2024</span></div>
+      <div class="conf-item"><span class="conf-type conf-type--oral" data-i18n="type_oral">Oral</span><div><div class="conf-title"><em>Reconstructive Surgery in Resource-Restricted Environments</em></div><div class="conf-venue">BAPRAS Scientific Meeting</div></div><span class="conf-year">2025</span></div>
+      <div class="conf-item"><span class="conf-type" data-i18n="type_invited">Invited</span><div><div class="conf-title"><em>Aesthetic Considerations in Breast Reconstruction</em></div><div class="conf-venue">Qatar Plastica Conference</div></div><span class="conf-year">2026</span></div>
+      <div class="conf-item"><span class="conf-type" data-i18n="type_invited">Invited</span><div><div class="conf-title"><em>National Surgical Skills Conference</em></div><div class="conf-venue">Hull University Medical School</div></div><span class="conf-year">2026</span></div>
+    </div>
+  </section>
+
+  <!-- ══ CLINICAL COLLABORATION — Victoria Rose ══ -->
+  <section class="section" style="padding-top:0">
+    <p class="eyebrow fade-in" data-i18n="collab_eyebrow">Clinical Collaboration</p>
+    <h2 class="section-title fade-in" style="margin-bottom:32px" data-i18n="collab_title">Working Together</h2>
+
+    <div class="ev-card fade-in">
+      <div class="ev-photos" data-autoplay="5000">
+        <div class="ev-photos__slide active">
+          <img src="images/collab_victoria_team.png" alt="Ahmed Mokhallalati with the Hull surgical team and Victoria Rose" loading="lazy" style="object-position:center 38%"/>
+        </div>
+        <div class="ev-photos__slide">
+          <img src="images/collab_victoria_theatre.png" alt="Bilateral stacked PAP flap surgery — Ahmed Mokhallalati and Victoria Rose, Hull" loading="lazy" style="object-position:center 42%"/>
+        </div>
+        <div class="ev-photos__dots">
+          <button class="ev-photos__dot active" aria-label="Photo 1"></button>
+          <button class="ev-photos__dot" aria-label="Photo 2"></button>
+        </div>
+      </div>
+      <div class="ev-body">
+        <div class="ev-meta">
+          <span class="ev-badge ev-badge--teal" data-i18n="vic_badge">Clinical Visit · Hull</span>
+          <span class="ev-year">2025</span>
+        </div>
+        <h3 class="ev-title" data-i18n="vic_title">Bilateral Stacked PAP Flap Reconstruction</h3>
+        <p class="ev-sub" data-i18n="vic_sub">Collaboration with Ms. Victoria Rose · Hull University Hospitals</p>
+        <p class="ev-text" data-i18n="vic_p1">It was a privilege to welcome Ms. Victoria Rose to Hull University Hospitals for a complex breast reconstruction case — a patient with a painful, severely fibrotic DIEP flap following radiotherapy, for whom we proceeded with bilateral stacked PAP flaps.</p>
+        <p class="ev-text" data-i18n="vic_p2">Beyond the operating theatre, we were fortunate to hear Ms. Rose speak about her humanitarian work in Gaza. We both share the hope of operating together there in the near future.</p>
+        <p class="ev-text" data-i18n="vic_p3">My sincere thanks to the outstanding Hull team whose skill and generosity made this visit what it was.</p>
+        <div class="ev-note">
+          <p><strong style="color:var(--navy);font-weight:500">Procedure:</strong> Bilateral stacked PAP flaps for salvage breast reconstruction following radiation-induced fibrosis of prior DIEP flap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ RCF GALA ══ -->
+  <section class="section" style="padding-top:0">
+    <div class="ev-card fade-in">
+      <div class="ev-photos" data-autoplay="5000">
+        <div class="ev-photos__slide active">
+          <img src="images/rcf_gala_group.png" alt="Ahmed Mokhallalati with the Refugee Crisis Foundation team at the Gala" loading="lazy" style="object-position:center 28%"/>
+        </div>
+        <div class="ev-photos__slide">
+          <img src="images/rcf_gala_speaking.png" alt="Ahmed Mokhallalati speaking at the RCF 10th Anniversary Gala Dinner" loading="lazy" style="object-position:center 22%"/>
+        </div>
+        <div class="ev-photos__dots">
+          <button class="ev-photos__dot active" aria-label="Photo 1"></button>
+          <button class="ev-photos__dot" aria-label="Photo 2"></button>
+        </div>
+      </div>
+      <div class="ev-body">
+        <div class="ev-meta">
+          <span class="ev-badge ev-badge--pink" data-i18n="rcf_badge">Invited Speaker</span>
+          <span class="ev-year">2025</span>
+        </div>
+        <h3 class="ev-title" data-i18n="rcf_title">Refugee Crisis Foundation — 10th Anniversary Gala</h3>
+        <p class="ev-sub" data-i18n="rcf_sub">Invited Speaker · Gala Dinner</p>
+        <p class="ev-text" data-i18n="rcf_p1">It was a privilege to speak at the gala dinner marking ten years of the Refugee Crisis Foundation — a charity delivering medical, dental, and welfare support to refugee communities in camps and under-resourced settings.</p>
+        <p class="ev-text" data-i18n="rcf_p2">I was particularly struck by their new initiative supporting dental students in Gaza — helping them complete their training despite the enormous disruption of the past two years. Congratulations to the entire RCF team on a decade of impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ RCS GLOBAL SURGICAL FRONTIER ══ -->
+  <section class="section" style="padding-top:0">
+    <div class="ev-card fade-in">
+      <div class="ev-photo-single">
+        <img src="images/rcs_frontier_talk.png" alt="Ahmed Mokhallalati presenting at the Royal College of Surgeons of England" loading="lazy" style="object-position:center 45%"/>
+      </div>
+      <div class="ev-body">
+        <div class="ev-meta">
+          <span class="ev-badge ev-badge--teal" data-i18n="rcs_badge">Invited Speaker</span>
+          <span class="ev-year">2025</span>
+        </div>
+        <h3 class="ev-title" data-i18n="rcs_title">Global Surgical Frontier Conference</h3>
+        <p class="ev-sub" data-i18n="rcs_sub">Royal College of Surgeons of England · London</p>
+        <p class="ev-text" data-i18n="rcs_p1">At this year's Global Surgical Frontier event, I gave a talk on surgical work in Gaza — what it demands, what it costs, and what it means to operate in a setting where the infrastructure of care has been systematically dismantled.</p>
+        <p class="ev-text" data-i18n="rcs_p2">During the event, I was moved to see photographs of Ahmed Maqadma displayed at the college — an OrthoPlastic surgeon killed in Gaza in March 2024, who had worked across hospitals throughout northern Gaza for five consecutive months without seeing his family. His dedication and commitment to his patients in the most extreme circumstances represent something that should not be forgotten.</p>
+        <div class="ev-blockquote">
+          <p data-i18n="rcs_quote">"In this fragile ceasefire, the names of those who did not survive deserve to be spoken clearly and remembered fully."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="band__inner">
+      <div class="quote-block quote-block--light fade-in" style="max-width:620px">
+        <p data-i18n="gh_quote">"I've seen what happens when surgical care collapses. That's what I want to help prevent — not by visiting, but by building."</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Auto-slideshow — no arrows, just dots + autoplay
+document.querySelectorAll('.ev-photos[data-autoplay]').forEach(container => {
+  const slides = container.querySelectorAll('.ev-photos__slide');
+  const dots   = container.querySelectorAll('.ev-photos__dot');
+  const delay  = parseInt(container.dataset.autoplay) || 5000;
+  let current  = 0;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current]?.classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current]?.classList.add('active');
+  }
+
+  dots.forEach((d, i) => d.addEventListener('click', () => { clearInterval(timer); goTo(i); timer = setInterval(() => goTo(current + 1), delay); }));
+  let timer = setInterval(() => goTo(current + 1), delay);
+
+  // Swipe support on mobile
+  let startX = 0;
+  container.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+  container.addEventListener('touchend',   e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { clearInterval(timer); goTo(diff > 0 ? current+1 : current-1); timer = setInterval(() => goTo(current+1), delay); }
+  }, {passive:true});
+});
+</script>
+
+<script src="js/i18n.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
